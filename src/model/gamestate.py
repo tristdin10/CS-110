@@ -5,9 +5,21 @@ class GameState:
         self.max_attempts = 6
 
     def add_guess(self, guess):
+        """
+        Adds a guess to the list of guesses.
+
+        args: guess (str) - the guessed word
+        return: None
+        """
         self.guesses.append(guess.upper())
 
     def check_guess(self, guess):
+        """
+        Checks a guess against the target word and returns feedback for each letter.
+        
+        args: guess (str) - the guessed word
+        return: list of str - feedback for each letter ('green', 'yellow', 'gray')
+        """
         guess = guess.upper()
         result = []
         # Use simple frequency accounting for better Wordle logic
@@ -30,4 +42,9 @@ class GameState:
         return feedback
 
     def is_game_over(self):
+        """
+        Checks if the game is over.
+        
+        return: bool - True if the game is over, False otherwise
+        """
         return len(self.guesses) >= self.max_attempts or self.target_word in self.guesses

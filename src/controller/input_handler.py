@@ -7,7 +7,12 @@ class InputHandler:
         self.message = ''
 
     def handle_event(self, event):
-        # Returns a tuple (submitted_guess or None, message)
+        """
+        Processes a pygame event for user input.
+        
+        args: event (pygame.Event) - keyboard event to handle
+        return: tuple (guess or None, message string)
+        """
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 if len(self.current_input) == 5:

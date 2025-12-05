@@ -19,6 +19,9 @@ class GameGUI:
         self.margin = 20
 
     def draw_board(self):
+        """
+        Draws the game board with current guesses and feedback.
+        """
         self.screen.fill(BG)
         # center board
         start_x = (self.screen.get_width() - (self.cell * self.cols)) // 2
