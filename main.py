@@ -1,8 +1,8 @@
 import pygame, sys, os
-from model.wordbank import WordBank
-from model.gamestate import GameState
-from controller.input_handler import InputHandler
-from view.gui import GameGUI
+from src.model.wordbank import WordBank
+from src.model.gamestate import GameState
+from src.controller.input_handler import InputHandler
+from src.view.gui import GameGUI
 
 def main():
     pygame.init()
@@ -11,7 +11,7 @@ def main():
     clock = pygame.time.Clock()
 
     proj_dir = os.path.dirname(os.path.abspath(__file__))
-    word_bank = WordBank(os.path.join(proj_dir, 'data', 'words.json'))
+    word_bank = WordBank(os.path.join(proj_dir, 'etc', 'words.json'))
     target_word = word_bank.get_random_word()
     game_state = GameState(target_word)
     input_handler = InputHandler(game_state)
